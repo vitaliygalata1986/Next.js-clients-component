@@ -9,9 +9,9 @@ type Props = {
 
 function PostSearch({ onSearch }: Props) {
   const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(true);
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
-
     const posts = await getPostsBySearch(search);
     onSearch(posts); // отправим посты
   };

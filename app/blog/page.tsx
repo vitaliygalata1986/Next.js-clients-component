@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { getAllPosts } from '../services/getPosts';
 import Posts from '@/components/Posts';
 import PostSearch from '@/components/PostSearch';
-
+import { Preloader } from '@/components/Preloader';
 /*
 const a = (info: any) => {
   console.log(info);
@@ -29,7 +29,7 @@ export default function Blog() {
     <>
       <h1>Blog page</h1>
       <PostSearch onSearch={setPosts} />
-      {loading ? <h3>Loading...</h3> : <Posts posts={posts} />}
+      {loading ? <Preloader /> : <Posts posts={posts} />}
     </>
   );
 }
